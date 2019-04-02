@@ -1,0 +1,15 @@
+package com.kutay.github.projeleri.verone;
+
+import java.util.Scanner;
+
+public class P8_HarfNotu {
+
+	public static void main(String[] args) {
+		try {
+			
+		
+		Scanner input = new Scanner(System.in);
+		int not = input.nextInt();
+		}
+	}
+}

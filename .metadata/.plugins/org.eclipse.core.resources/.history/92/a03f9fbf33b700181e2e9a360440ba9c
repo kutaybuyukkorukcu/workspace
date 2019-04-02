@@ -1,0 +1,11 @@
+package com.kutay.github.webservice.numarapredict;
+
+public class Application {
+
+	public static void main(String[] args) {
+		Server.setPort();
+		int port = Server.getPort();
+		Server server = new Server(port);
+		Client client = new Client(IP, Server.PORT);
+	}
+}

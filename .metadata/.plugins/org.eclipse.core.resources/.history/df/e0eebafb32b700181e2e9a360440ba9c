@@ -1,0 +1,129 @@
+package com.kutay.github.webservice.predictInOne;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Random;
+import java.util.Scanner;
+
+import com.kutay.github.webservice.numarapredict.Client;
+
+public class number_prediction_game {
+	private Socket socket = null;
+	private DataInputStream input = null;
+	private DataOutputStream output = null;
+	private static int MIN = 1;
+	private static int MAX = 100;
+	private static String IP = "127.0.0.1";
+	public static int numberGuessed;
+	public static int PORT;
+	public static int port;
+
+	public static void setPort() {
+		Scanner in = new Scanner(System.in);
+		System.out.print("Server icin port giriniz : ");
+		port = in.nextInt();
+	}
+
+	public static int getPort() {
+		return port;
+	}
+
+	public static void main(String[] args) {
+		setPort();
+		PORT = getPort();
+		Server server = new Server(PORT);
+		Client client = new Client(IP, PORT);
+	}
+
+	static class Server {
+
+		private Socket socket = null;
+		private ServerSocket server = null;
+		private DataInputStream input = null;
+
+		public Server(int port) {
+
+			try {
+				server = new ServerSocket(port);
+				System.out.println("Server started");
+
+				socket = server.accept();
+				System.out.println("Client accepted");
+
+				// new BufferedInputStream gerekli mi bakarsin?
+				input = new DataInputStream(socket.getInputStream());
+
+				Random random = new Random();
+				numberGuessed = random.nextInt(MAX - 1) + 1;
+
+				int guess = 0;
+				String line = "";
+				do {
+					try {
+						line = input.readUTF();
+						guess = Integer.parseInt(line);
+						if (numberGuessed == guess) {
+							System.out.println("Tebrikler! " + numberGuessed + " tahmin ettiðim numaraydý.");
+							break;
+						} else {
+							if (numberGuessed > guess) {
+								System.out.println("Numaram " + guess + "'den daha yukarýda.");
+							} else {
+								System.out.println("Numaram " + guess + "'den daha aþaðýda.");
+							}
+						}
+					} catch (IOException i) {
+						System.out.println(i);
+					} catch (NumberFormatException e) {
+						System.out.println(e);
+					} catch (NullPointerException j) {
+						System.out.println(j);
+					}
+				} while (guess != -1);
+				System.out.println("Closing connection");
+				socket.close();
+				input.close();
+			} catch (IOException i) {
+				System.out.println(i);
+			} catch (NumberFormatException e) {
+				System.out.println(e);
+			} catch (NullPointerException j) {
+				System.out.println(j);
+			}
+		}
+
+	}
+
+	*
+
+	static class Client {
+		**
+		private Socket socket = null;
+		private DataInputStream input = null;private*
+		DataOutputStream output = null;**
+
+		public Client(String address, int port) { try { socket = new Socket(address,
+	 * port); System.out.println("Connected");
+	 * 
+	 * input = new DataInputStream(System.in); output = new
+	 * DataOutputStream(socket.getOutputStream());
+	 * 
+	 * 
+	 * String line = ""; // 0 verince EOFException?! String temp = ""; do { try {
+	 * System.out.print(MIN + " ile " + MAX + " arasýnda bir sayý giriniz : "); line
+	 * = input.readLine(); if (line.equals(temp)) {
+	 * System.out.println("Bu sayi icin tahminde bulunmustunuz!"); continue; } temp
+	 * = line; output.writeUTF(line); output.flush(); } catch (IOException i) {
+	 * System.out.println(i); } catch (NumberFormatException e) {
+	 * System.out.println(e); } }while(socket.isConnected());**System.out.println("closed");**socket.close();input.close();output.close();
+	}catch(
+
+	IOException e)
+	{
+	 * e.printStackTrace(); }**
+}**}
+
+}

@@ -1,0 +1,22 @@
+1532586962383	Rename type 'DataRow'
+1532586994784	Rename type 'WritedDataRow'
+1532589990745	Rename type 'HttpsURLConnection'
+1532590033062	Rename type 'HttpURLConnection'
+1532590076963	Delete element
+1532598324085	Move compilation unit
+1532604678858	Rename method 'setWord'
+1532606552360	Delete element
+1532606581338	Move compilation unit
+1532606588935	Move compilation unit
+1532606623322	Delete element
+1532607019326	Move compilation unit
+1532607025375	Delete element
+1532618119008	Rename method 'setText'
+1532676346282	Delete element
+1532676357211	Delete element
+1532676374671	Move compilation unit
+1532698040533	Delete element
+1532705123274	Delete element
+1532705391122	Rename package 'com.kutay.SpecificFileReader'
+1532706269875	Rename type 'HttpURLConnectionExample1'
+1532706306731	Rename package 'com.kutay.SpecificFileReader'

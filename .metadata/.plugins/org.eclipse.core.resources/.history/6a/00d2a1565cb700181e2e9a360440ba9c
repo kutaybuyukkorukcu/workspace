@@ -1,0 +1,55 @@
+package com.kutay.github.webservice.result;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.Random;
+
+public class Client {
+
+	private static Socket socket = null;
+	private static BufferedReader input = null;
+	private static DataOutputStream output = null;
+	private final int MAX = 100;
+	private static int numberGuessedC;
+	private static int var;
+	
+	public Client(String address, int port) {
+		try {
+			socket = new Socket(address, port);
+			System.out.println("Connected");
+			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			output = new DataOutputStream(socket.getOutputStream());
+			//Random random = new Random();
+			//numberGuessedC = random.nextInt(MAX -1) + 1;
+			
+			do {
+				try {
+					numberGuessedC = (int) (Math.random() * var) + 1;
+					
+					Thread.sleep(1000);
+					if (numberGuessedC < 50) {
+						
+					}
+					output.writeInt(numberGuessedC);
+					if (Server.numberGuessedS == numberGuessedC)
+						break;
+					output.flush();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} 
+			} while (socket.isConnected());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		Client client = new Client("127.0.0.1", 2346);
+	}
+
+
+}

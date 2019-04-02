@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.kutay.github.webservice.KnockServer&apos; to &apos;KnockKnockServer&apos;&#x0D;&#x0A;- Original project: &apos;GitHub_Projeleri&apos;&#x0D;&#x0A;- Original element: &apos;com.kutay.github.webservice.KnockServer&apos;&#x0D;&#x0A;- Renamed element: &apos;com.kutay.github.webservice.KnockKnockServer&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;KnockServer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.kutay.github.webservice{KnockServer.java[KnockServer" matchStrategy="1" name="KnockKnockServer" qualified="false" references="true" similarDeclarations="false" stamp="1534062986685" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.kutay.github.webservice.result;
+
+public class Server {
+
+}

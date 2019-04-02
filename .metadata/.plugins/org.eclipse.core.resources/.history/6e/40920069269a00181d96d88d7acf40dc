@@ -1,0 +1,27 @@
+package com.kutay.oylesine.aritmetikislemler;
+
+
+public class KutuphanemIleIslemler {
+
+	public static void main(String[] args) {
+
+		Islemler deneme = new Islemler();
+
+		deneme.setA(5);
+		deneme.setB(7);
+
+		int gA = deneme.getA();
+		int gB = deneme.getB();
+
+		int a = deneme.toplam(gA, gB);
+		int b = deneme.cikarma(gA, gB);
+		int c = deneme.carpma(gA, gB);
+		int d = deneme.bolme(gA, gB);
+		int e = deneme.toplam(3, 2);
+		int f = deneme.cikarma(3, 2);
+		int g = deneme.carpma(3, 2);
+		int h = deneme.bolme(3, 2);
+
+		System.out.println(a + "," + b + "," + c + "," + d + "," + e + "," + f + "," + g + "," + h);
+	}
+}

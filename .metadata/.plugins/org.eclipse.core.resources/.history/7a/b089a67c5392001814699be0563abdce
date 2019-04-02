@@ -1,0 +1,45 @@
+package com.kutay.github.projeleri.verone;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class P11_CokKolonluDongu {
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> colList1 = new ArrayList<Integer>();
+		ArrayList<Integer> colList2 = new ArrayList<Integer>();
+		ArrayList<Integer> colList3 = new ArrayList<Integer>();
+		ArrayList<Integer> colList4 = new ArrayList<Integer>();
+
+		for (int row = 0; row < 6; row++) {
+
+			for (int i = 0; i < 99; i++) {
+				if ((i + 1) % 15 == 0) {
+					colList1.add(i+1);
+				}
+			}
+
+			for (int x = 0; x < 30; x++) {
+				if ((x + 1) % 5 == 0) {
+					colList2.add(x+1);
+				}
+			}
+
+			for (int y = 100; 100 > 49; y--) {
+				if ((y) % 10 == 0) {
+					colList3.add(y);
+				}
+			}
+
+			for (int z = 0; z < 6; z++) {
+				colArray4[row] = (int) Math.pow(z + 1, 2);
+			}
+
+		}
+
+		for (int a = 0; a < 6; a++) {
+			System.out.print(colArray1[a] + colArray2[a] + colArray3[a] + colArray4[a]);
+		}
+	}
+}

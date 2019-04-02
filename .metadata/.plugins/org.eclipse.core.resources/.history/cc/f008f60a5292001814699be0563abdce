@@ -1,0 +1,39 @@
+package com.kutay.github.projeleri.verone;
+
+public class P11_CokKolonluDongu {
+
+	public static void main(String[] args) {
+		for (int row = 0; row < 6; row++) {
+
+			for (int i = 0; i < 99; i++) {
+				if ((i + 1) % 15 == 0) {
+					int[] colArray1;
+					colArray1[row] = (i + 1); // System.out.print(i + 1 + " ");
+				}
+			}
+
+			for (int x = 0; x < 30; x++) {
+				if ((x + 1) % 5 == 0) {
+					int[] colArray2; // System.out.print(x + 1 + " ");
+					colArray2[row] = (x + 1);
+				}
+			}
+
+			for (int y = 100; 100 > 49; y--) {
+				if ((y) % 10 == 0) {
+					int[] colArray3; // System.out.print(y + " 1");
+					colArray3[row] = y;
+				}
+			}
+
+			for (int z = 0; z < 6; z++) {
+				int[] colArray4;
+				colArray4[row] = (int) Math.pow(z + 1, 2); // System.out.print(Math.pow(z + 1, 2) + "\n");
+			}
+
+		}
+		
+		System.out.print();
+		
+	}
+}
