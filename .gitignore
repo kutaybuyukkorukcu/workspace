@@ -1,5 +1,5 @@
 *.class
 .metadata/
 .recommenders/
-_project.xml/
-_classpath.xml/
+_project.xml
+_classpath.xml
